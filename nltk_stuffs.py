@@ -1,17 +1,24 @@
 import nltk
 import numpy as np
-# nltk.download('punkt')
-# nltk.download('wordnet')
+
+nltk.download('punkt')
+nltk.download('punkt_tab')
+nltk.download('wordnet')
 # there is two possible stemming techniques predicted for this chatbot, one is the wordnetlemmatizer and another is the porter stemmer
-from string import punctuation # to get the punctuation marks which is to be ignored
+from string import \
+    punctuation  # to get the punctuation marks which is to be ignored
+
 from nltk.stem import PorterStemmer
+
 stemmer = PorterStemmer() # use this or one below
 from nltk.stem import WordNetLemmatizer
+
 lemmatizer = WordNetLemmatizer() # i mean this
 
-from nltk.corpus import stopwords # stop word contains the set of words which can be ignored, like "this", "am", "is" etc. which doesnt have muh context to itself
+from nltk.corpus import \
+    stopwords  # stop word contains the set of words which can be ignored, like "this", "am", "is" etc. which doesnt have muh context to itself
 
-# nltk.download('stopwords')
+nltk.download('stopwords')
 
 to_be_ignored = set(stopwords.words('english')) | set(punctuation) # this set contains both the stop words and the punctuations which to be ignored while processing
 

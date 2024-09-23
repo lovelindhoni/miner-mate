@@ -1,8 +1,10 @@
-from json import loads # to load the intents.json
+import random  # to randomnly choose a response based on query
+from json import loads  # to load the intents.json
+
 import torch
-import random # to randomnly choose a response based on query
-from nltk_stuffs import tokenize_sentence, bow # for processing the user input
+
 from chatmodel import NeuralNetwork
+from nltk_stuffs import bow, tokenize_sentence  # for processing the user input
 
 gpu_support = torch.device('cuda' if torch.cuda.is_available() else 'cpu') # checking for cuda-supported gpu. Increases training speed and  efficincy if available.
 
@@ -19,7 +21,7 @@ model.load_state_dict(model_data['model_state']) # loading the state of the save
 
 model.eval() # model in evalutation mode, this specifies that we are evaluating our model after training
 
-bot_name = "Prasath" 
+bot_name = "Trojan Lion" 
 print(f"Hi, I am {bot_name}. Lets's chat, type 'quit' to exit anytime")
 
 while True:

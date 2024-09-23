@@ -1,5 +1,5 @@
-import torch
 import torch.nn as nn
+
 
 class NeuralNetwork(nn.Module): # this is our model's neural network
     def __init__(self, input_size, hidden_size, output_size): #hidden size represents the no. of neurons in hidden layers
